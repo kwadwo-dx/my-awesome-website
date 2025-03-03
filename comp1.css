@@ -7,11 +7,18 @@ body {
 }
  
 header {
+    backgond: linear-gradient(to right, #4CAF50, #2E8B57);
     background-color: #0044cc;
     color: white;
     padding: 20px;
     text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
 
+/* Navigation Bar */
+nav {
+    text-align: center;
+    margin-top: 10px;
 }
 
 nav ul {
@@ -22,14 +29,46 @@ nav ul {
 nav ul li {
     display: inline;
     margin: 0 10px;
-
 }
 
 nav ul li a {
+    position: relative;
     color:white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+    transition:  all 0.3s ease-in-out;
 }
+
+nav ul li a:hover {
+     color: yellow;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: yellow;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 
 section {
     padding: 20px;
@@ -48,9 +87,11 @@ form input, form textarea {
 button {
     background: #0044cc;
     color: white;
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 button:hover {
